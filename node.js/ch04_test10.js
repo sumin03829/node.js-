@@ -1,0 +1,16 @@
+var outpu='안녕1!';
+var buffer1=new Buffer(10);
+var len=vuffer1.write(output,'utf8');
+console.log('첫 번째 버퍼의 문자열 : %s',buffer1.toString());
+
+var buffer2=new Buffer('안녕2!','utf8');
+console.log('버퍼 객체의 타입 %s', vuffer2.toString());
+
+console.log('버퍼 객체의 타입: %s',Buffer.isBuffer(buffer1));
+
+var byteLen=Buffer.byteLength(output);
+var str1=buffer1.toString('utf8',0,byteLen);
+var str2=buffer2.toString('utf8');
+
+buffer1.copy(buffer2,0,0,len);
+console.log('두 번째 버퍼에 복사한 후 의 문자열 %s',buffer2.toString('utf8'));
